@@ -24,6 +24,7 @@ public class AdminContoller {
 
 	@Autowired
 	private AdminMarkerService aMarkerService;
+	private List<Address> mAddress;
 	
 	
 	@PostMapping(value="/saveAddress",headers="Accept=application/json")
@@ -41,10 +42,14 @@ public class AdminContoller {
 	@GetMapping(value="/getAddress/{userId}")
 	public List <Address> getLocationById(@Valid @RequestBody Address address,@PathVariable(value = "userId") Integer userId)
 	{
-		List<Address> mAddress =aMarkerService.getMarkerById(userId);
-		
-		return mAddress;	
-		
+		if(userId==2)
+		{
+			 mAddress =aMarkerService.getMarkerById(userId);
+			 
+		}
+
+		return mAddress;
+					
 	}
 	
 

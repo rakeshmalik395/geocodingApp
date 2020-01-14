@@ -12,10 +12,4 @@ public interface MarkerAddressRepository extends JpaRepository<Address, Integer>
 	List<Address> findByUserId(@Valid Integer userId);
 
 	
-
-
-
-
-
-	
 }

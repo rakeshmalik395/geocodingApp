@@ -36,7 +36,6 @@ public class Address {
 	private int StatusCode;
 
 
-
 	public Address() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -55,13 +54,8 @@ public class Address {
 		this.userId = userId;
 		this.role = role;
 		this.StatusCode = statusCode;
+		
 	}
-
-
-
-
-
-
 
 
 	public Integer getMarkerId() {

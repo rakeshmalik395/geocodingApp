@@ -1,5 +1,6 @@
 package com.geomap.service;
 
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -10,10 +11,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.geomap.model.Address;
+
 import com.geomap.model.Role;
 import com.geomap.model.User;
-import com.geomap.repository.MarkerAddressRepository;
+
 import com.geomap.repository.RoleLoginRepository;
 import com.geomap.repository.UserLoginRepository;
 
@@ -26,8 +27,7 @@ public class LoginService {
 	
 	@Autowired
 	private RoleLoginRepository roleRepository;
-	
-	
+		
 	
 	User userSuccess =new User();
 
@@ -43,9 +43,6 @@ public class LoginService {
 				if(user.getEmailId().equals(userLogin.getEmailId()) && user.getPassword().equals(userLogin.getPassword()))
 					user.getRoles().isEmpty();
 				System.out.println("Role..."+user.getRoles().isEmpty());
-//				userSuccess.setEmailId(userLogin.getEmailId());	
-//				userSuccess.setPassword(userLogin.getPassword());
-//				userSuccess.setUserId(user.getUserId());
 				return user;
 
 			}

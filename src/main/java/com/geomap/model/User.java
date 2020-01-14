@@ -45,7 +45,7 @@ public class User {
 	
 	@Transient
 	private int statusCode;
-	
+		
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns =  @JoinColumn(name = "userid", unique=false),
@@ -77,12 +77,9 @@ public class User {
 		this.gender = gender;
 		this.statusCode = statusCode;
 		this.roles = roles;
+	
 	}
 
-
-
-
-	
 
 
 	public Integer getUserId() {

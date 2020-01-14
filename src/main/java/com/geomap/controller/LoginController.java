@@ -28,14 +28,15 @@ public class LoginController {
 	private LoginService loginService;
 
 	
+	
 	@PostMapping(value = "/userLogin" ,headers="Accept=application/json")
-	public User getUserByEmailId(@Valid @RequestBody User userLogin, HttpSession session)
+	public User getUserByEmailId( @RequestBody User userLogin, HttpSession session)
 	{
 		User uLogin= loginService.findUserByEmailId(userLogin);
 		if(uLogin != null) {
 			session.setAttribute("emailId", userLogin.getEmailId());
 			session.setAttribute("password", userLogin.getPassword());
-			session.setAttribute("Role", userLogin.getRoles());
+			session.setAttribute("Role", userLogin.getRoles());		
 			System.out.println(session.getAttribute("emailId"));
 			System.out.println(session.getAttribute("password"));
 			System.out.println("session attribute set");
