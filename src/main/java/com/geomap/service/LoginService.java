@@ -41,10 +41,11 @@ public class LoginService {
 			{
 				
 				if(user.getEmailId().equals(userLogin.getEmailId()) && user.getPassword().equals(userLogin.getPassword()))
+				{
 					user.getRoles().isEmpty();
 				System.out.println("Role..."+user.getRoles().isEmpty());
 				return user;
-
+				}
 			}
 		
 		}
